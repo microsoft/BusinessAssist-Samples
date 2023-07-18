@@ -1,0 +1,110 @@
+﻿@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@using BusinessAssistAPIClient.Models;
+@model BusinessAssistAPIClient.Models.BAForecastDataModel
+
+@{
+    ViewData["Title"] = "Business Assist API - Get Forecast Operation Data";
+    var forecastData = Model.ForecastData;
+}
+
+<h2>Get Forecast Operation Data</h2>
+
+<hr />
+<h4>Forecast Input Data:</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetForecastData">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QueryText" class="control-label">Enter a valid Forecast Operation ID:</label>
+                <input asp-for="QueryText" class="form-control" />
+                <span asp-validation-for="QueryText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Get Forecast Data" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<h4>Results:</h4>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tableresults" type="button" role="tab" aria-controls="tableresults" aria-selected="true">Results Table</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#rawresults" type="button" role="tab" aria-controls="rawresults" aria-selected="false">Raw Results</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="tableresults" role="tabpanel" aria-labelledby="tableresults-tab">
+        <table class="table table-striped table-bordered table-condensed table-hover">
+
+            @if (forecastData != null && forecastData.Predictions != null)
+        {
+            @if (forecastData.Predictions.Count > 0)
+            {
+                <tr>
+                        <th>Date</th>
+                        <th>Forecast</th>
+                        <th>Low</th>
+                        <th>High</th>
+                    </tr>
+
+                    @if (forecastData != null && forecastData.Predictions != null)
+                    {
+                        @foreach (ForecastDataItem item in forecastData.Predictions)
+                        {
+                            <tr>
+                                @{
+                                    <td><b>@item.Date</b></td>
+                                    <td>@item.Forecast</td>
+                                    <td><b>@item.Low</b></td>
+                                    <td><b>@item.High</b></td>
+                                }
+
+                            </tr>
+                        }
+                    }                
+            }
+            else
+            {
+                    <tr><td><p>No forecast data provided.</p></td></tr>
+            }
+        }
+        </table>
+
+    </div>
+    <div class="tab-pane fade" id="rawresults" role="tabpanel" aria-labelledby="rawresults-tab">
+        <table class="table table-striped table-bordered table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>
+
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Response)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Status)
+                    </td>
+                    <td>
+                        <pre>
+                            @Html.DisplayFor(model => model.Response)
+                </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

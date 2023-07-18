@@ -1,0 +1,54 @@
+﻿@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@model BusinessAssistAPIClient.Models.BASelfHelpModel
+
+@{
+    ViewData["Title"] = "Business Assist API - Self-Help";
+
+}
+
+<h2>Business Assist API - Self-Help</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="SelfHelp">
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QueryText" class="control-label">Enter a problem to look up Self-Help solutions:</label>
+                <input asp-for="QueryText" class="form-control" />
+                <span asp-validation-for="QueryText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SelfHelp" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Response)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Status)
+            </td>
+            <td>
+                <pre>
+                @Html.DisplayFor(model => model.Response)
+                </pre>
+            </td>
+        </tr>
+    </tbody>
+</table>

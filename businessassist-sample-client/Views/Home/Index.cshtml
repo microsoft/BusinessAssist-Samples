@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div>
+        <h3>
+            An ASP.NET Core Web App that will connect to the Business Assist API.
+        </h3>
+        <br />
+        <p>
+            To enable the users on your tenant to access this application and the BA API API,
+            you need to sign-in as an admin and consent for the required permissions. That will make this app and the 
+            Business Assist API available to all users in the tenant.
+        </p>
+
+    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="AdminConsentClient">Consent as Admin</a>
+
+    </div>
