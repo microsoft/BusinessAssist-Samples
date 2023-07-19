@@ -2,6 +2,10 @@
 
 The Business Assist APIs are a set of Machine learning based tools originally developed internally at Microsoft to automate common customer success-oriented tasks. They are now being made available to help customers and partners achieve their goals to reduce costs, more efficiently listen to customers, and respond to their needs more quickly. These tools will allow large scale data analysis to be performed quickly and automatically. The Business Assist APIs give you tools to better understand your customers' wants and needs and respond to them more quickly.
 
+## Projects in this Repository
+
+- [businessassist-sample-client](https://github.com/microsoft/BusinessAssist-Samples/tree/main/businessassist-sample-client): A sample project to expeidite your connection to the Business Assist API. The sample client provides insight into the authentication process along with providing access to the Self-Help and Forecast endpoints of the Business Assist API.
+
 # New to Business Assist?
 
 - [Get Started](https://learn.microsoft.com/en-us/microsoft-365/business-assist-api/get-started/onboarding) by setting up access, authentication, and authorization to use Business Assist APIs. 
