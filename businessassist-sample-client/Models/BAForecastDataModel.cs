@@ -6,15 +6,6 @@ using System.Collections.Generic;
 
 namespace BusinessAssistAPIClient.Models
 {
-
-
-    //    {
-    //    "OperationId": "525de32f-2984-4c6c-b97d-02f6f0d2f8ef",
-    //    "Name": "forecast_sample",
-    //    "Status": 0,
-    //    "Diagnostics": null
-    //}
-
     public class ForecastOpStatus
     {
         public string OperationId { get; set; }
@@ -41,7 +32,6 @@ public class BACreateForecastDataModel
         public string Status { get; set; }
         public string Response { get; set; }
         public Guid OperationId { get; set; }
-        //public string OperationStatus { get; set; }
         public string ForecastInputData { get; set; }
         public string Name { get; set; }
         public string inputDataJson { get; set; } = "[{\"Date\":\"2015-01-01\",\"Ticket\":\"195\"},{\"Date\":\"2015-01-02\",\"Ticket\":\"774\"},{\"Date\":\"2015-01-03\",\"Ticket\":\"134\"},{\"Date\":\"2015-01-04\",\"Ticket\":\"100\"},{\"Date\":\"2015-01-05\",\"Ticket\":\"975\"},{\"Date\":\"2015-01-06\",\"Ticket\":\"64\"},{\"Date\":\"2015-01-07\",\"Ticket\":\"748\"},{\"Date\":\"2015-01-08\",\"Ticket\":\"74\"}]";
@@ -61,7 +51,6 @@ public class BACreateForecastDataModel
 
             return model;
         }
-
 
         public ForecastDataResults? ForecastData { get; set; }
         public ForecastOpStatus? OperationStatus { get; set; }

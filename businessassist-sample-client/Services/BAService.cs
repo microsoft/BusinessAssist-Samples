@@ -177,7 +177,6 @@ namespace BusinessAssistAPIClient.Services
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     var jsonElement = JsonSerializer.Deserialize<JsonElement>(content);
-                    //forecastData.ForecastData = JsonSerializer.Deserialize<ForecastDataResults>(content, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
                     forecastData.Response = JsonSerializer.Serialize(jsonElement, new JsonSerializerOptions { WriteIndented = true });
                 }
                 else
@@ -225,7 +224,6 @@ namespace BusinessAssistAPIClient.Services
             }
 
             return forecastData;
-            //throw new HttpRequestException($"Invalid status code in the HttpResponseMessage: {response.StatusCode}.");
         }
 
         /// <summary>

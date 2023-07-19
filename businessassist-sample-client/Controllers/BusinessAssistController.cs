@@ -134,8 +134,6 @@ namespace BusinessAssistAPIClient.Controllers
             {
                 BAForecastDataModel result = (await _baService.GetForecastOpStatusAsync(forecastData));
                 return View(result);
-
-                //return Task.FromResult<IActionResult>(View());
             }
             catch (WebApiMsalUiRequiredException ex)
             {
