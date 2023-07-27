@@ -40,9 +40,6 @@ A service principal of your single-tenant app is provisioned after the tenant ad
 You can try the **/adminconsent** endpoint on the home page of the sample by clicking on the `Consent as Admin` link. 
 
 ![admin consent endpoint](./AdminConsentBtn.png)
-> **The `.default` scope**
->
-> Did you notice the scope here is set to `.default`, as opposed to `User.Read.All` for Microsoft Graph and `access_as_user` for Web API? This is a built-in scope for every application that refers to the static list of permissions configured on the application registration. Basically, it *bundles* all the permissions in one scope. The `/.default` scope can be used in any OAuth 2.0 flow, but is necessary when using the v2 admin consent endpoint to request application permissions. Read about `scopes` usage at [Scopes and permissions in the Microsoft Identity Platform](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#the-default-scope).  
   
 Since both the web app and API needs to be consented by the tenant admin, the admin will need to consent twice.
 
