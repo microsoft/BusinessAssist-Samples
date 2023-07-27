@@ -70,14 +70,14 @@ If you get errors during admin consent, consider deleting the  **service princip
 #### How to delete Service Principals of your apps in a tenant
 
 Steps for deleting a service principal differs with respect to whether the principal is in the **home tenant** of the application or in another tenant. If it is in the **home tenant**, you will find the entry for the application under the **App Registrations** blade. If it is another tenant, you will find the entry under the **Enterprise Applications** blade. Read more about these blades in the [How and why applications are added to Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-applications-are-added).The screenshot below shows how to access the service principal from a **home tenant**:
->
-> ![principal1](./Home_Tenant_SP.png)
->
-> The rest of the process is the same for both cases. In the next screen, click on **Properties** and then the **Delete** button on the upper side.
->
-> ![principal1](./Home_Tenant_SP_Delete.png)
->
-> You have now deleted the service principal of Business Assist API Web App for that tenant.
+
+![principal1](./Home_Tenant_SP.png)
+
+The rest of the process is the same for both cases. In the next screen, click on **Properties** and then the **Delete** button on the upper side.
+
+![principal1](./Home_Tenant_SP_Delete.png)
+
+You have now deleted the service principal of Business Assist API Web App for that tenant.
 
 ## Run the sample
 
